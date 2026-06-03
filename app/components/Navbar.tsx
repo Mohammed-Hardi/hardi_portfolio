@@ -5,26 +5,9 @@ import { motion } from 'framer-motion';
 import { Moon, Sun, ArrowRight, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-const getInitialDarkMode = () => {
-  if (typeof window === 'undefined') {
-    return false;
-  }
-
-  const savedTheme = localStorage.getItem('theme');
-
-  if (savedTheme === 'dark') {
-    return true;
-  }
-
-  if (savedTheme === 'light') {
-    return false;
-  }
-
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
-};
-
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(getInitialDarkMode);
+  const [darkMode, setDarkMode] = useState(false);
+  const [themeReady, setThemeReady] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
@@ -37,6 +20,23 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
+    const frameId = requestAnimationFrame(() => {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldUseDarkMode = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+      setDarkMode(shouldUseDarkMode);
+      setThemeReady(true);
+    });
+
+    return () => cancelAnimationFrame(frameId);
+  }, []);
+
+  useEffect(() => {
+    if (!themeReady) {
+      return;
+    }
+
     if (darkMode) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -44,7 +44,7 @@ const Navbar = () => {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
-  }, [darkMode]);
+  }, [darkMode, themeReady]);
 
   const toggleDarkMode = () => {
     setDarkMode((currentMode) => !currentMode);

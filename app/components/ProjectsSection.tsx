@@ -24,7 +24,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="min-h-screen py-16 px-4 bg-white dark:bg-gray-800">
+    <section id="projects" className="min-h-screen bg-gray-50 px-4 py-20 dark:bg-gray-900">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -32,9 +32,9 @@ const ProjectsSection = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-6xl mx-auto text-center"
       >
-        <h2 className="text-4xl font-bold font-serif mb-12">My Projects</h2>
+        <h2 className="mb-14 font-serif text-4xl font-bold">My Projects</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -42,18 +42,19 @@ const ProjectsSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gray-100 dark:bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col h-full"
+              whileHover={{ y: 24, scale: 1.02 }}
+              className="flex aspect-square w-full max-w-[340px] flex-col items-center justify-center rounded-full border border-gray-200 bg-white p-8 text-center shadow-lg transition-shadow hover:shadow-2xl dark:border-gray-700 dark:bg-gray-950"
             >
-              <h3 className="text-2xl font-bold font-sans mb-2">{project.title}</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
+              <h3 className="mb-3 max-w-[230px] font-sans text-xl font-bold leading-tight">{project.title}</h3>
+              <p className="mb-4 max-w-[250px] text-sm leading-6 text-gray-700 dark:text-gray-300">{project.description}</p>
+              <div className="mb-4 flex max-w-[250px] flex-wrap justify-center gap-2">
                 {project.techStack.map((tech, techIndex) => (
-                  <span key={techIndex} className="bg-blue-200 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-700 dark:text-blue-200">
+                  <span key={techIndex} className="rounded-full bg-red-100 px-2.5 py-1 text-xs font-semibold text-red-700 dark:bg-red-950 dark:text-red-200">
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex justify-center gap-4 mt-auto">
+              <div className="flex justify-center gap-4 text-sm">
                 <Link
                   href={project.githubLink}
                   target="_blank"

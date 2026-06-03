@@ -7,84 +7,81 @@ import Link from 'next/link';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 pt-24">
-      {/* Background Glows */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-      <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-
+    <section id="home" className="relative flex min-h-screen items-center bg-white px-4 pt-24 dark:bg-gray-950">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10"
+        className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 py-16 lg:grid-cols-[1fr_360px]"
       >
-        {/* Profile Image */}
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="mb-3 text-lg font-medium text-red-500"
+          >
+            Hi! I&apos;m Abdulai Mohammed Hardi
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
+            className="mb-5 max-w-3xl font-serif text-5xl font-bold leading-tight md:text-7xl"
+          >
+            Frontend Web Developer
+            <br />
+            based in Ghana.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="mb-8 max-w-2xl text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg"
+          >
+            I am a passionate developer with a journey in tech, specializing in creating responsive and user-friendly web applications.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1, duration: 0.8 }}
+            className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start"
+          >
+            <Link
+              href="#contact"
+              className="group flex items-center rounded-full bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+            >
+              Contact me <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/images/abdulai-mohammed-hardi-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="flex items-center rounded-full border border-gray-300 px-6 py-3 transition-colors hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
+            >
+              My Resume <Download size={18} className="ml-2" />
+            </Link>
+          </motion.div>
+        </div>
+
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.5, type: "spring", stiffness: 200 }}
-          className="mb-6"
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.6, duration: 0.7, type: "spring", stiffness: 140 }}
+          className="mx-auto mt-4 flex w-full max-w-xs justify-center lg:mt-14 lg:max-w-sm"
         >
           <Image
             src="/images/profile.jpg"
             alt="Abdulai Mohammed Hardi"
-            width={150}
-            height={150}
-            className="rounded-full object-cover border-4 border-white shadow-lg mx-auto"
+            width={320}
+            height={420}
+            priority
+            className="h-auto max-h-[420px] w-full rounded-2xl border border-gray-200 bg-gray-100 object-contain shadow-xl dark:border-gray-800 dark:bg-gray-900"
           />
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="text-lg mb-2"
-        >
-          Hi! I&apos;m Abdulai Mohammed Hardi
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-          className="text-5xl md:text-7xl font-serif font-bold mb-4 leading-tight"
-        >
-          Frontend Web Developer   
-          <br />
-          based in Ghana.
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="text-md md:text-lg max-w-2xl mx-auto mb-8 text-gray-600 dark:text-gray-300"
-        >
-          I am a passionate developer with a journey in tech, specializing in creating responsive and user-friendly web applications.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Link
-            href="#contact"
-            className="flex items-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors group"
-          >
-            Contact me <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link
-            href="/images/abdulai-mohammed-hardi-resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            download
-            className="flex items-center px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800 transition-colors"
-          >
-            My Resume <Download size={18} className="ml-2" />
-          </Link>
         </motion.div>
       </motion.div>
     </section>
