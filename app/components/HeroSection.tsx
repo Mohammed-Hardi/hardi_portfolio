@@ -12,7 +12,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 py-16 lg:grid-cols-[1fr_360px]"
+        className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)]"
       >
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           <motion.p
@@ -72,15 +72,15 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.6, duration: 0.7, type: "spring", stiffness: 140 }}
-          className="mx-auto mt-4 flex w-full max-w-xs justify-center lg:mt-14 lg:max-w-sm"
+          className="mx-auto flex h-[520px] w-full max-w-sm items-center justify-center lg:h-[min(72vh,640px)] lg:max-w-none"
         >
           <Image
-            src="/images/profile.jpg"
+            src="/images/profile1.jpg"
             alt="Abdulai Mohammed Hardi"
-            width={320}
-            height={420}
+            width={520}
+            height={640}
             priority
-            className="h-auto max-h-[420px] w-full rounded-2xl border border-gray-200 bg-gray-100 object-contain shadow-xl dark:border-gray-800 dark:bg-gray-900"
+            className="h-full w-full rounded-2xl border border-gray-200 bg-gray-100 object-contain object-center shadow-xl dark:border-gray-800 dark:bg-gray-900"
           />
         </motion.div>
       </motion.div>
