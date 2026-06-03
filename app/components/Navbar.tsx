@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Moon, Sun, ArrowRight } from 'lucide-react';
+import { Moon, Sun, ArrowRight, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const getInitialDarkMode = () => {
@@ -25,6 +25,16 @@ const getInitialDarkMode = () => {
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(getInitialDarkMode);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#contact', label: 'Contact' },
+  ];
 
   useEffect(() => {
     if (darkMode) {
@@ -45,29 +55,62 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-sm"
+      className="fixed left-0 right-0 top-0 z-50 border-b border-gray-200/70 bg-white/90 px-4 py-3 shadow-sm backdrop-blur-md dark:border-gray-800/70 dark:bg-black/90"
     >
-      <Link href="/" className="text-2xl font-bold font-sans flex items-center">
-        Abdulai.
-        <span className="w-2 h-2 bg-red-500 rounded-full ml-1"></span>
-      </Link>
-
-      <div className="hidden md:flex space-x-8 font-sans">
-        <Link href="#home" className="hover:text-red-500 transition-colors">Home</Link>
-        <Link href="#about" className="hover:text-red-500 transition-colors">About me</Link>
-        <Link href="#projects" className="hover:text-red-500 transition-colors">Projects</Link>
-        <Link href="#skills" className="hover:text-red-500 transition-colors">Skills</Link>
-        <Link href="#experience" className="hover:text-red-500 transition-colors">Experience</Link>
-      </div>
-
-      <div className="flex items-center space-x-4">
-        <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
-        <Link href="#contact" className="flex items-center px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors group">
-          Contact <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
+        <Link href="#home" className="flex items-center font-sans text-2xl font-bold">
+          Abdulai.
+          <span className="ml-1 h-2 w-2 rounded-full bg-red-500"></span>
         </Link>
+
+        <div className="hidden items-center gap-6 font-sans text-sm font-medium lg:flex">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="transition-colors hover:text-red-500">
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={toggleDarkMode}
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="rounded-full p-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-800"
+          >
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <Link href="#contact" className="group hidden items-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 sm:flex">
+            Contact <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMenuOpen((current) => !current)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+            className="rounded-full p-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-800 lg:hidden"
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
+
+      {menuOpen && (
+        <div className="absolute left-0 right-0 top-full border-b border-gray-200 bg-white px-4 py-3 shadow-md dark:border-gray-800 dark:bg-black lg:hidden">
+          <div className="mx-auto grid max-w-6xl gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="rounded-md px-3 py-3 font-medium transition-colors hover:bg-gray-100 hover:text-red-500 dark:hover:bg-gray-900"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </motion.nav>
   );
 };

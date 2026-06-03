@@ -27,7 +27,7 @@ const HeroSection = () => {
           className="mb-6"
         >
           <Image
-            src="/images/profile.jpg" // Placeholder for your profile image
+            src="/images/profile.jpg"
             alt="Abdulai Mohammed Hardi"
             width={150}
             height={150}
@@ -51,7 +51,8 @@ const HeroSection = () => {
           className="text-5xl md:text-7xl font-serif font-bold mb-4 leading-tight"
         >
           Frontend Web Developer   
- based in Ghana.
+          <br />
+          based in Ghana.
         </motion.h1>
 
         <motion.p
@@ -76,7 +77,7 @@ const HeroSection = () => {
             Contact me <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
-            href="/images/AbdulaiMohammedHardi-Resume.pdf" // Placeholder for your resume PDF
+            href="/images/abdulai-mohammed-hardi-resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             download
