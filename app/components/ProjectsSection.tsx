@@ -19,7 +19,13 @@ const projects = [
     githubLink: "#", // Placeholder for GitHub link
     liveDemoLink: "#", // Placeholder for live demo link
   },
-  // Add more projects as needed
+  {
+    title: "Personal Portfolio Website",
+    description: "A responsive portfolio built with Next.js, Tailwind CSS, and Framer Motion to showcase projects, skills, and contact details.",
+    techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    githubLink: "#",
+    liveDemoLink: "#",
+  },
 ];
 
 const ProjectsSection = () => {

@@ -31,8 +31,6 @@ const HeroSection = () => {
             className="mb-5 max-w-3xl font-serif text-5xl font-bold leading-tight md:text-7xl"
           >
             Frontend Web Developer
-            <br />
-            based in Ghana.
           </motion.h1>
 
           <motion.p
@@ -41,7 +39,7 @@ const HeroSection = () => {
             transition={{ delay: 0.9, duration: 0.8 }}
             className="mb-8 max-w-2xl text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg"
           >
-            I am a passionate developer with a journey in tech, specializing in creating responsive and user-friendly web applications.
+            Crafting polished, responsive frontend experiences with modern tools and a focus on clean UI, performance, and usability.
           </motion.p>
 
           <motion.div
@@ -75,7 +73,7 @@ const HeroSection = () => {
           className="mx-auto flex h-[520px] w-full max-w-sm items-center justify-center lg:h-[min(72vh,640px)] lg:max-w-none"
         >
           <Image
-            src="/images/profile1.jpg"
+            src="/images/profile.jpg.jpeg"
             alt="Abdulai Mohammed Hardi"
             width={520}
             height={640}

@@ -55,23 +55,23 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed left-0 right-0 top-0 z-50 border-b border-gray-200/70 bg-white/90 px-4 py-3 shadow-sm backdrop-blur-md dark:border-gray-800/70 dark:bg-black/90"
+      className="fixed left-0 top-0 z-50 flex h-16 w-full items-center border-b border-gray-200/70 bg-white/90 px-4 py-3 shadow-sm backdrop-blur-md dark:border-gray-800/70 dark:bg-black/90 lg:h-full lg:w-24 lg:flex-col lg:justify-between lg:border-b-0 lg:border-r lg:px-3 lg:py-6"
     >
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
-        <Link href="#home" className="flex items-center font-sans text-2xl font-bold">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 lg:flex-col lg:items-center lg:justify-start lg:gap-8 lg:w-full">
+        <Link href="#home" className="flex items-center font-sans text-2xl font-bold lg:justify-center">
           Abdulai.
           <span className="ml-1 h-2 w-2 rounded-full bg-red-500"></span>
         </Link>
 
-        <div className="hidden items-center gap-6 font-sans text-sm font-medium lg:flex">
+        <div className="hidden lg:flex lg:flex-col lg:items-center lg:gap-4 font-sans text-sm font-medium">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="transition-colors hover:text-red-500">
+            <Link key={link.href} href={link.href} className="rounded-md px-3 py-2 transition-colors hover:bg-red-50 hover:text-red-500 dark:hover:bg-gray-900">
               {link.label}
             </Link>
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 lg:flex-col lg:gap-3 lg:w-full lg:items-center">
           <button
             type="button"
             onClick={toggleDarkMode}
@@ -80,7 +80,7 @@ const Navbar = () => {
           >
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          <Link href="#contact" className="group hidden items-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 sm:flex">
+          <Link href="#contact" className="group hidden items-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 sm:flex lg:block lg:px-3 lg:py-2 lg:text-xs">
             Contact <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
           </Link>
           <button

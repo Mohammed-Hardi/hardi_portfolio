@@ -20,9 +20,8 @@ const About = () => {
           </h2>
           <div className="w-16 h-1 bg-accent mb-8 rounded-full" />
           <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
-            I&apos;m Abdulai Mohammed Hardi, a software engineering intern at CORTEXX (Cohort 2),
-            where I work on AI projects, automation, and modern web development. I&apos;m also
-            involved in running Harditech, a data and internet service business.
+            I&apos;m Abdulai Mohammed Hardi, a developer focused on modern web development,
+            automation, and practical digital tools.
           </p>
           <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
             I&apos;m passionate about building practical, results-driven solutions — from
@@ -30,8 +29,7 @@ const About = () => {
             Human-Computer Interaction, UI/UX design, and entrepreneurship.
           </p>
           <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-            Currently based in Tamale, Ghana. I&apos;m actively looking for internship and
-            entry-level opportunities where I can contribute and grow.
+            I&apos;m an AWS Cloud Practitioner who is passionate about cloud computing and turning ideas into cloud solutions.
           </p>
         </motion.div>
       </div>
