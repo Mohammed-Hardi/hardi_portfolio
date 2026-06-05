@@ -1,6 +1,4 @@
-'use client';
-
-import Image from 'next/image';
+"use client";
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import Link from 'next/link';
@@ -72,12 +70,11 @@ const HeroSection = () => {
           transition={{ delay: 0.6, duration: 0.7, type: "spring", stiffness: 140 }}
           className="mx-auto flex h-[520px] w-full max-w-sm items-center justify-center lg:h-[min(72vh,640px)] lg:max-w-none"
         >
-          <Image
+          <img
             src="/images/profile.jpg.jpeg"
             alt="Abdulai Mohammed Hardi"
             width={520}
             height={640}
-            priority
             className="h-full w-full rounded-2xl border border-gray-200 bg-gray-100 object-contain object-center shadow-xl dark:border-gray-800 dark:bg-gray-900"
           />
         </motion.div>
