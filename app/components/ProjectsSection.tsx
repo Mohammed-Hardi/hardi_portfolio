@@ -9,15 +9,14 @@ const projects = [
     title: "Habit Tracker Web App",
     description: "A responsive habit-tracking website built with HTML, CSS, and JavaScript to help users monitor daily habits and routines.",
     techStack: ["HTML", "CSS", "JavaScript"],
-    githubLink: "#", // Placeholder for GitHub link
-    liveDemoLink: "#", // Placeholder for live demo link
+    githubLink: "https://github.com/Mohammed-Hardi/habit-tracker.git", 
+    liveDemoLink: "https://habit-tracker-sigma-khaki.vercel.app/", 
   },
   {
     title: "Edulearn Web App",
     description: "A multi-page website built with HTML, CSS, and JavaScript that acts as an online learning platform for lecturers and students.",
     techStack: ["HTML", "CSS", "JavaScript"],
-    githubLink: "#", // Placeholder for GitHub link
-    liveDemoLink: "#", // Placeholder for live demo link
+  
   },
   {
     title: "Personal Portfolio Website",
