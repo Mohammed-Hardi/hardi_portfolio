@@ -7,13 +7,7 @@ const education = [
     degree: "BSc. Computer Science (Top-Up Degree)",
     institution: "University of Energy and Natural Resources (UENR)",
     location: "Sunyani, Ghana",
-    date: "Jan 2025 — Present",
-  },
-  {
-    degree: "Diploma in Computer Science",
-    institution: "University of Energy and Natural Resources (UENR)",
-    location: "Sunyani, Ghana",
-    date: "Jan 2022 — Nov 2024",
+    date: "Jan 2022 — Present",
   },
   {
     degree: "AWS re/Start Program",
