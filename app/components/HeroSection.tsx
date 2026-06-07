@@ -19,8 +19,8 @@ const HeroSection = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="mb-3 text-lg font-medium text-red-500"
           >
-            Hi! I&apos;m Abdulai Mohammed Hardi
-            Software Developer!
+            Hi! I&apos;m Abdulai Mohammed Hardi <br />
+            <span className="font-bold">Software Developer!</span>
           </motion.p>
 
           <motion.p
