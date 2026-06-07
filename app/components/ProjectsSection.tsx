@@ -59,24 +59,7 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex justify-center gap-4 text-sm">
-                <Link
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  <Code size={20} className="mr-1" /> GitHub
-                </Link>
-                <Link
-                  href={project.liveDemoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  <ExternalLink size={20} className="mr-1" /> Live Demo
-                </Link>
-              </div>
+              
             </motion.div>
           ))}
         </div>
