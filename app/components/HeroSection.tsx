@@ -20,24 +20,25 @@ const HeroSection = () => {
             className="mb-3 text-lg font-medium text-red-500"
           >
             Hi! I&apos;m Abdulai Mohammed Hardi
+            Software Developer!
           </motion.p>
 
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
-            className="mb-5 max-w-3xl font-serif text-5xl font-bold leading-tight md:text-7xl"
+            className="mb-5 max-w-3xl text-xl font-semibold leading-tight md:text-3xl"
           >
-            Frontend Web Developer
-          </motion.h1>
+            "Great software isn't just functional — it's felt."
+          </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
-            className="mb-8 max-w-2xl text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg"
+            className="mb-8 max-w-2xl text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg italic"
           >
-            Crafting polished, responsive frontend experiences with modern tools and a focus on clean UI, performance, and usability.
+            "Code is the closest thing we have to a superpower."
           </motion.p>
 
           <motion.div
