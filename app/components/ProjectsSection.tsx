@@ -22,7 +22,7 @@ const projects = [
     title: "Personal Portfolio Website",
     description: "A responsive portfolio built with Next.js, Tailwind CSS, and Framer Motion to showcase projects, skills, and contact details.",
     techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    githubLink: "#",
+    githubLink: "https://github.com/Mohammed-Hardi/hardi_portfolio.git",
     liveDemoLink: "#",
   },
 ];

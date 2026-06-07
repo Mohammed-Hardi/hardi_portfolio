@@ -55,7 +55,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed left-0 top-0 z-50 flex h-16 w-full items-center border-b border-gray-200/70 bg-white/90 px-4 py-3 shadow-sm backdrop-blur-md dark:border-gray-800/70 dark:bg-black/90"
+      className="fixed left-0 top-0 z-50 flex h-16 w-full items-center border-b border-gray-200/70 bg-white/90 px-4 py-3 shadow-sm backdrop-blur-md dark:border-gray-800/70 dark:bg-transparent"
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
         <Link href="#home" className="flex items-center font-sans text-2xl font-bold lg:justify-center">
@@ -80,9 +80,6 @@ const Navbar = () => {
           >
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          <Link href="#contact" className="group flex items-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 lg:px-3 lg:py-2 lg:text-xs">
-            Contact <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-          </Link>
           <button
             type="button"
             onClick={() => setMenuOpen((current) => !current)}
