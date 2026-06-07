@@ -20,7 +20,7 @@ const HeroSection = () => {
             className="mb-3 text-lg font-medium text-red-500"
           >
             Hi! I&apos;m Abdulai Mohammed Hardi <br />
-            <span className="font-bold">Software Developer!</span>
+            <span className="text-black dark:text-white font-black">Software Developer!</span>
           </motion.p>
 
           <motion.p

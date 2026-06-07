@@ -59,7 +59,30 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
-              
+              {(project.githubLink || project.liveDemoLink) && (
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                  {project.githubLink && (
+                    <Link
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 transition hover:border-red-500 hover:text-red-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-200 dark:hover:border-red-400 dark:hover:text-red-400"
+                    >
+                      <Code size={16} /> GitHub
+                    </Link>
+                  )}
+                  {project.liveDemoLink && (
+                    <Link
+                      href={project.liveDemoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 transition hover:border-red-500 hover:text-red-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-200 dark:hover:border-red-400 dark:hover:text-red-400"
+                    >
+                      <ExternalLink size={16} /> Live Demo
+                    </Link>
+                  )}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
