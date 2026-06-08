@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const education = [
   {
-    degree: "BSc. Computer Science (Top-Up Degree)",
+    degree: "BSc. Computer Science ",
     institution: "University of Energy and Natural Resources (UENR)",
     location: "Sunyani, Ghana",
     date: "Jan 2022 — Present",
